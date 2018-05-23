@@ -19,8 +19,18 @@ Page({
     couponId: 0,
     postscript:'', // 用户留言
     contentLength:0,
+    isPending:true// 是否是审核模式
   },
   onLoad: function (options) {
+
+    util.getOnlineSystemConfig((config)=>{
+      if(config)
+      {
+        this.setData({
+          isPending : config.is_pending!=0
+        });
+      }
+    })
 
   },
   getCheckoutInfo: function () {

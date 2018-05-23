@@ -88,7 +88,7 @@
     </view>
 
     
-    <view class="order-info">
+    <view wx:if="{{!isPending}}" class="order-info">
         <view class="item-c">
             <view class="l">付款方式</view>
             <view class="r" style="display:none">
